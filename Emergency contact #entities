@@ -1,1 +1,27 @@
-
+{
+  "name": "EmergencyContact",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Contact name"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "relationship": {
+      "type": "string",
+      "description": "Relationship to user"
+    },
+    "is_primary": {
+      "type": "boolean",
+      "default": false,
+      "description": "Primary emergency contact"
+    }
+  },
+  "required": [
+    "name",
+    "phone"
+  ]
+}
