@@ -1,0 +1,38 @@
+{
+  "name": "SavedPlace",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Place name"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "hospital",
+        "doctor",
+        "pharmacy",
+        "market",
+        "bank",
+        "temple",
+        "park",
+        "family",
+        "other"
+      ],
+      "description": "Type of place"
+    },
+    "address": {
+      "type": "string",
+      "description": "Full address"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon name for display"
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "address"
+  ]
+}
