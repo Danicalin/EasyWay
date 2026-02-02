@@ -1,0 +1,50 @@
+{
+  "name": "Reminder",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Reminder title"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "medication",
+        "bill",
+        "appointment",
+        "other"
+      ],
+      "description": "Type of reminder"
+    },
+    "time": {
+      "type": "string",
+      "description": "Time to remind (HH:MM format)"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of reminder"
+    },
+    "is_recurring": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this repeats daily"
+    },
+    "is_done": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the reminder is completed"
+    },
+    "is_snoozed": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the reminder is snoozed"
+    }
+  },
+  "required": [
+    "title",
+    "type",
+    "time",
+    "date"
+  ]
+}
