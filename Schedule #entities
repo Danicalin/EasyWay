@@ -1,0 +1,50 @@
+{
+  "name": "Schedule",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Activity name"
+    },
+    "time": {
+      "type": "string",
+      "description": "Time of activity (HH:MM format)"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of activity"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "doctor",
+        "medication",
+        "appointment",
+        "social",
+        "exercise",
+        "other"
+      ],
+      "description": "Type of activity"
+    },
+    "location": {
+      "type": "string",
+      "description": "Where the activity takes place"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "is_done": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the activity is completed"
+    }
+  },
+  "required": [
+    "title",
+    "time",
+    "date",
+    "type"
+  ]
+}
