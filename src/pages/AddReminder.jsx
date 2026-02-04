@@ -165,4 +165,57 @@ export default function AddReminder() {
                   border-2 border-transparent
                   focus:border-orange-500 focus:outline-none
                 "
- 
+              />
+            </div>
+
+            {/* Recurring Toggle */}
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setFormData({ ...formData, is_recurring: !formData.is_recurring })}
+              className={`
+                w-full p-5 rounded-3xl
+                ${formData.is_recurring ? 'bg-blue-600 text-white' : 'bg-white text-gray-800'}
+                flex items-center justify-between
+                shadow-lg
+              `}
+            >
+              <div className="flex items-center gap-3">
+                <RefreshCw className="w-8 h-8" />
+                <span className="text-xl font-bold">Repeat Daily</span>
+              </div>
+              <div className={`
+                w-12 h-7 rounded-full
+                ${formData.is_recurring ? 'bg-white/30' : 'bg-gray-200'}
+                relative transition-colors
+              `}>
+                <div className={`
+                  w-5 h-5 rounded-full bg-white shadow
+                  absolute top-1
+                  transition-all
+                  ${formData.is_recurring ? 'right-1' : 'left-1'}
+                `} />
+              </div>
+            </motion.button>
+
+            {/* Save Button */}
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={handleSave}
+              disabled={createMutation.isPending}
+              className="
+                w-full p-6 rounded-3xl
+                bg-green-600 text-white
+                text-2xl font-bold
+                flex items-center justify-center gap-3
+                shadow-xl
+              "
+            >
+              <Check className="w-10 h-10" />
+              {createMutation.isPending ? 'Saving...' : 'Save Reminder'}
+            </motion.button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
